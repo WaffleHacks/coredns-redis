@@ -40,6 +40,7 @@ func redisParse(c *caddy.Controller) (*Redis, error) {
 	)
 
 	for c.Next() {
+		c.Next() // Advance past the base domain
 		if c.NextBlock() {
 			for {
 				switch c.Val() {
